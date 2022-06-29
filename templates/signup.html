@@ -1,0 +1,49 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}
+Signup
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+
+<link rel="stylesheet" type="text/css" href=" {{url_for('.static', filename='signup.css')}} ">
+
+
+
+
+
+<div class="form-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6">
+                <div class="form-container">
+
+                    <form class="form-horizontal" method="POST" action="/signup">
+                        <h3 class="title">Register</h3>
+                        {{ form.hidden_tag()}}
+                        {{ wtf.form_field(form.username)}}
+                        {{ wtf.form_field(form.email)}}
+                        {{ wtf.form_field(form.password)}}
+                        {{ wtf.form_field(form.confirm)}}
+                        <h4 class="sub-title">Personal Information</h4>
+                        {{ wtf.form_field(form.phone)}}
+                        {{ wtf.form_field(form.city)}}
+                        
+                        
+                        <div class="check-terms">
+                            <input type="checkbox" class="checkbox">
+                            <span class="check-label">I agree to the terms</span>
+                        </div>
+                        <span class="signin-link">Already have an account? Click here to <a href="">Login</a></span>
+                        <button class="btn signup">Create Account</button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
