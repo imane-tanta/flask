@@ -2,8 +2,20 @@
 {% import "bootstrap/wtf.html" as wtf %}
 
 {% block title %}
+
+
+
+
 Signup
 {% endblock %}
+
+ {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+                <p>{{msg}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
 
 {% block styles %}
 {{super()}}
@@ -26,7 +38,7 @@ Signup
                         {{ wtf.form_field(form.username)}}
                         {{ wtf.form_field(form.email)}}
                         {{ wtf.form_field(form.password)}}
-                        {{ wtf.form_field(form.confirm)}}
+                        
                         <h4 class="sub-title">Personal Information</h4>
                         {{ wtf.form_field(form.phone)}}
                         {{ wtf.form_field(form.city)}}
@@ -37,13 +49,15 @@ Signup
                             <span class="check-label">I agree to the terms</span>
                         </div>
                         <span class="signin-link">Already have an account? Click here to <a href="">Login</a></span>
-                        <button class="btn signup">Create Account</button>
+                        <button type="submit" class="btn signup">Create Account</button>
                     
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<script src="{{url_for('.static', filename='./js/register.js')}}"></script>
 
 
 {% endblock %}

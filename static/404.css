@@ -1,0 +1,85 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+
+*{
+    padding: 0;
+    margin: 0;
+    
+}
+
+.pop {
+background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.05) 100%);
+mix-blend-mode: normal;
+border: 2px solid #FFFFFF;
+box-shadow: 0px 4px 101px rgba(0, 0, 0, 0.25);
+backdrop-filter: blur(10px);
+border-radius: 50px;
+}
+h1 {
+    font-size: 200px;
+    color:white;
+}
+
+h2 {
+    font-size: 50px;
+    color:white;
+    padding-bottom: 20px;
+}
+p {
+
+    color:white;
+    padding-bottom: 20px;
+}
+.login-container {
+    display: flex;
+    height: 100%;
+    width: 100vw;
+    background: linear-gradient(270deg, #074249 0%, #089697 100%);
+  }
+  
+  .vertical-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .logo-container {
+    
+  }
+  .logo-container img {
+    max-width: 600px;
+    height: 680px;
+  }
+  
+  .btn-primary {
+    background-color: white;
+    color: black;
+    border: black;
+    border-radius: 50px;
+  }
+  a {
+    color: black;
+  }
+  @media (max-width: 575.98px) {
+    .login-container {
+      grid-template-columns: 100%;
+      padding: 40px;
+      
+    }
+    .logo-container {
+      display: none;
+    }
+  }
+  .form-control {
+     
+    border : none;
+   
+      
+  }
+  .btn:hover {
+    background-color: black;
+    color: white;
+  }
+
+  {% endblock %}
